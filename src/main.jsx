@@ -18,6 +18,22 @@ const router = createBrowserRouter([
         path: "/",
         element:<Home></Home>
       },
+      {
+        path: "/listed_books",
+        element: <h1>this is listed book section</h1>
+      },
+      {
+        path: "/pages_to_read",
+        element: <h1>wishlist</h1>
+      },
+      {
+        path: "/sign_in",
+        element: <h2>sign in page</h2>
+      },
+      {
+        path: "/sign_up",
+        element: <h1>sign up page</h1>
+      }
       
     ]
   },
