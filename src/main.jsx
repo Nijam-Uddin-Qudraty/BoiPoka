@@ -9,6 +9,7 @@ import {
 import Root from './components/Root';
 import Home from './components/home/Home';
 import Book_details from './components/Books/Book_details';
+import Listed_books from './components/listed books/Listed_books';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/listed_books",
-        element: <h1>this is listed book section</h1>
+        element: <Listed_books></Listed_books>
       },
       {
         path: "/pages_to_read",
