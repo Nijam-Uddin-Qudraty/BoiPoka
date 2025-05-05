@@ -1,7 +1,15 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import { useContext } from "react";
+import { Store_readBookContext, Store_wishlistContext } from "../Root";
+
+
 
 const Book_details = () => {
+	// context 
+	const [setReadBooks] = useContext(Store_readBookContext);
+	const [setWishlist] = useContext(Store_wishlistContext);
+	// showing book details 
 	const { bookId } = useParams();
     const data = useLoaderData();
     const id = parseInt(bookId)
@@ -31,8 +39,8 @@ const Book_details = () => {
                         <p>Year of Publishing : {book.yearOfPublishing}</p>
                         <div>
 
-                        <button className="btn btn-primary">Read</button>
-                        <button className="btn btn-primary">WishList</button>
+                        <button className="btn btn-primary" onClick={() => setReadBooks(prev => [...prev, book])}>Read</button>
+                        <button className="btn btn-primary" onClick={() => setWishlist(prev => [...prev, book])}>WishList</button>
                         </div>
 					</div>
 				</div>
