@@ -1,10 +1,13 @@
-import React from "react";
+import React, { createContext, useState } from "react";
+import { Link } from "react-router-dom";
+import Read_books from "./Read_books";
+import Wishlist from "./Wishlist";
 
 const Listed_books = () => {
+	
 	return (
 		<div>
 			<div>
-				<h2>Books</h2>
 				<div className="dropdown dropdown-end">
 					<div
 						tabIndex={0}
@@ -37,9 +40,8 @@ const Listed_books = () => {
 						aria-label="Tab 1"
 					/>
 					<div className="tab-content border-base-300 bg-base-100 p-10">
-						Read books
+						
 					</div>
-
 					<input
 						type="radio"
 						name="my_tabs_2"
@@ -48,10 +50,8 @@ const Listed_books = () => {
 						defaultChecked
 					/>
 					<div className="tab-content border-base-300 bg-base-100 p-10">
-						Wishlisht Books
+						<Wishlist></Wishlist>
 					</div>
-
-					
 				</div>
 			</div>
 		</div>
