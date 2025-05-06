@@ -1,9 +1,14 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import Book from '../Books/Book';
+import { StoreContext } from '../Root';
 const Wishlist = () => {
+    const [, wishlist] = useContext(StoreContext);
+    console.log(wishlist);
     return (
         <div>
-            <h1>Wishlisht</h1>
+            {
+                wishlist.map((book)=><Book book={book}></Book>)
+            }
         </div>
     );
 };

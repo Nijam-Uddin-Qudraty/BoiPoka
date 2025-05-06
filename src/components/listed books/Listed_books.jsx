@@ -2,12 +2,15 @@
 import { Link } from "react-router-dom";
 import Read_books from "./Read_books";
 import Wishlist from "./Wishlist";
+import { useContext } from "react";
+import { StoreContext } from "../Root";
 
 const Listed_books = () => {
-	
+	const {read_books_list,wishlist} = useContext(StoreContext)
 	return (
 		<div>
 			<div>
+				{/* sort btn  */}
 				<div className="dropdown dropdown-end">
 					<div
 						tabIndex={0}
@@ -40,6 +43,7 @@ const Listed_books = () => {
 						aria-label="Tab 1"
 					/>
 					<div className="tab-content border-base-300 bg-base-100 p-10">
+						<Read_books></Read_books>
 						
 					</div>
 					<input
