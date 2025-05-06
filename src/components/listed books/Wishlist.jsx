@@ -3,7 +3,6 @@ import Book from '../Books/Book';
 import { StoreContext } from '../Root';
 const Wishlist = () => {
     const [, wishlist] = useContext(StoreContext);
-    console.log(wishlist);
     return (
         <div>
             {

@@ -21,17 +21,17 @@ const Root = () => {
 	const [wishlist, setWishlist] = useState([]);
 	const handleDataStoring = (event, book) => {
 		if (event.target.innerText === "Read") {
-			const exists = read_books_list.filter(
+			const exists = read_books_list.find(
 				(prev) => prev.bookId === book.bookId
 			);
-			if (exists) {
+			if (!exists) {
 				setRead_books_list([...read_books_list, book]);
 			}
 		} else {
-			const exists = wishlist.filter(
+			const exists = wishlist.find(
 				(prev) => prev.bookId === book.bookId
 			);
-			if (exists) {
+			if (!exists) {
 				setWishlist([...wishlist, book]);
 			}
 		}
@@ -40,7 +40,7 @@ const Root = () => {
 	return (
 		<div className="max-w-6xl mx-auto">
 			<BookDataContext.Provider value={booksApi}>
-				<StoreContext.Provider value={[read_books_list, wishlist]}>
+				<StoreContext.Provider value={[read_books_list, wishlist,setRead_books_list,setWishlist]}>
 					<HandleStoreContext.Provider value={handleDataStoring}>
 						<Navbar></Navbar>
 						<Outlet></Outlet>

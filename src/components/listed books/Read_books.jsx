@@ -4,7 +4,6 @@ import { StoreContext } from '../Root';
 
 const Read_books = () => {
     const [read_books_list] = useContext(StoreContext);
-    console.log(read_books_list);
     return (
         <div>
             {
