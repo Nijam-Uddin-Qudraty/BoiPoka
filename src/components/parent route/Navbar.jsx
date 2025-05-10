@@ -3,21 +3,21 @@ import React from 'react';
 
 const Navbar = () => {
     const list = <>
-    <li className="btn btn-outline"><NavLink to={ "./"}>Home</NavLink></li>
+    <li className="btn btn-outline btn-primary"><NavLink to={ "./"}>Home</NavLink></li>
     <li><NavLink to={"./listed_books"}>Listed Books</NavLink></li>
         <li><NavLink to={"pages_to_read"}>Pages to read</NavLink></li>
     </>
     const buttons = 
         <>
             
-            <li><NavLink to={"sign_in"}>Sign In</NavLink></li>
-            <li><NavLink to={"sign_up"}>Sign Up</NavLink></li>
+           <NavLink to={"sign_in"}> <button className="btn btn-primary">Sign In</button></NavLink>
+            <NavLink to={"sign_up"}><button className="btn btn-secondary">Sign Up</button></NavLink>
         </>
         
   
     return (
-        <div>
-            <div className="navbar bg-base-100 shadow-sm">
+        <>
+            <div className=" navbar bg-base-100 shadow-sm">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -42,7 +42,7 @@ const Navbar = () => {
   </ul>
 </div>
 
-        </div>
+        </>
     );
 };
 

@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 @import "tailwindcss";
 @plugin "daisyui"{
-    themes: light --default, dark --prefersdark;
 }
-
+:root {
+  --color-primary: #23BE0A !important;  /* Custom primary color */
+  --color-secondary: #59C6D2 !important;  /* Custom secondary color */}
+body{
+    font-family: "Work Sans",sans-serif;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Playfair Display", serif;
+}
