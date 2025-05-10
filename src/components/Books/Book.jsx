@@ -4,19 +4,26 @@ const Book = ({book}) => {
     return (
         <div>
             <Link to={`/book/${book.bookId}`} >
-					<div className="card bg-base-100 w-96 shadow-sm">
-						<figure>
-							<img src={book.image} alt="book" />
+					<div className="card bg-base-100 min-w-96 h-full shadow-sm p-6 flex flex-col rounded-2xl">
+					
+					
+					<figure className="bg-blue-200 px-24 py-8 rounded-2xl">
+							<img className='h-40' src={book.image} alt="book" />
 						</figure>
-						<div className="card-body">
+					
+					<div className="mt-6 space-y-4">
+						<div className='flex gap-3'>
+
 							{book.tags.map((tag) => (
-								<p className="badge badge-outline">{tag}</p>
+								<p className="badge badge-outline ">{tag}</p>
 							))}
+						</div>
 							<h2 className="card-title">
 								{book.bookName}
 								<div className="badge badge-secondary">NEW</div>
 							</h2>
-							<p>By : {book.author}</p>
+						<p >By : {book.author}</p>
+							<div className="border-t-2 border-dashed border-gray-300"></div>
 							<div className="card-actions flex justify-between">
 								<div className="">{book.category}</div>
 							<p>{book.rating}</p>
