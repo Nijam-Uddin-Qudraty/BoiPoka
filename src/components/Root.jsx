@@ -19,6 +19,8 @@ const Root = () => {
 	// states for keeping read_list_books
 	const [read_books_list, setRead_books_list] = useState([]);
 	const [wishlist, setWishlist] = useState([]);
+	
+
 	const handleDataStoring = (event, book) => {
 		if (event.target.innerText === "Read") {
 			const exists = read_books_list.find(
@@ -26,12 +28,16 @@ const Root = () => {
 			);
 			if (!exists) {
 				setRead_books_list([...read_books_list, book]);
+				const newWishlist = wishlist.filter((prev) => prev.bookId !== book.bookId);
+setWishlist([...newWishlist]);
 			}
 		} else {
+			const alreadyAddedtoRead = read_books_list.find((prev)=>prev.bookId == book.bookId)
 			const exists = wishlist.find(
-				(prev) => prev.bookId === book.bookId
+				(prev) => ((prev.bookId === book.bookId))
 			);
-			if (!exists) {
+			
+			if (!exists && !alreadyAddedtoRead) {
 				setWishlist([...wishlist, book]);
 			}
 		}

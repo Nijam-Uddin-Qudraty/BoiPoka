@@ -84,7 +84,7 @@ const Listed_books = () => {
 						type="radio"
 						name="my_tabs_2"
 						className="tab"
-						aria-label="Tab 1"
+						aria-label="Read"
 					/>
 					<div className="tab-content border-base-300 bg-base-100 p-10">
 						<Read_books></Read_books>
@@ -93,7 +93,7 @@ const Listed_books = () => {
 						type="radio"
 						name="my_tabs_2"
 						className="tab"
-						aria-label="Tab 2"
+						aria-label="Wishlist"
 						defaultChecked
 					/>
 					<div className="tab-content border-base-300 bg-base-100 p-10">
